@@ -1,0 +1,30 @@
+@import "variables";
+@import "mixins";
+
+.navbar {
+  padding: 20px;
+  border-bottom: $border;
+  border-top: $border;
+  background-color: $color-white;
+
+  &__container {
+    @include container();
+    @include flexBox-between();
+    &__part {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+    &__item {
+      color: $color-dark-gray;
+      font-family: $font-family-medium;
+      font-size: 16px;
+      line-height: 18px;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
