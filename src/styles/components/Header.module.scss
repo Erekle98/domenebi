@@ -1,0 +1,98 @@
+@import "variables";
+@import "mixins";
+
+.header {
+  @include flexBox-between();
+  width: 100%;
+  height: 80px;
+  background-color: $color-white;
+
+  &__leftContent {
+    a {
+      img {
+        height: 32px;
+        width: auto;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__rightContent {
+    @include flexBox-between();
+    background-color: $color-white;
+    height: 100%;
+    gap: 20px;
+
+    &__item {
+      @include flexBox-center();
+      border: $border;
+      border-radius: 12px;
+      padding: 14px;
+      cursor: pointer;
+
+      img {
+        height: 20px;
+        width: auto;
+      }
+
+      &:hover {
+        background-color: $color-background;
+      }
+    }
+
+    &__user {
+      @include flexBox-between();
+      background-color: $color-white;
+      border: $border;
+      border-radius: 12px;
+      padding: 14px;
+      width: 160px;
+      gap: 24px;
+      cursor: pointer;
+
+      img {
+        height: 20px;
+        width: auto;
+      }
+
+      &__leftContent {
+        @include flexBox-center();
+        gap: 10px;
+
+        img {
+          height: 20px;
+          width: auto;
+        }
+
+        span {
+          max-width: 70px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-family: "TKT-Regular";
+          font-size: 14px;
+          color: $color-dark-gray;
+        }
+      }
+
+      &__rightContent {
+        @include flexBox-center();
+
+        img {
+          height: 5px;
+          width: auto;
+        }
+      }
+
+      &:hover {
+        background-color: $color-background;
+      }
+    }
+  }
+}
+
+@include mobile() {
+  .header {
+    display: none;
+  }
+}
