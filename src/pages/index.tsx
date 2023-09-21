@@ -2,6 +2,7 @@ import Head from "next/head";
 
 import Header from "@/components/Header";
 import NavBar from "@/components/NavBar";
+import Slogan from "@/components/Slogan";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <div className="main">
         <Header />
         <NavBar />
+        <Slogan />
       </div>
     </>
   );
