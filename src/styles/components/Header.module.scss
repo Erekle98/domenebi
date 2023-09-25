@@ -39,6 +39,30 @@
       &:hover {
         background-color: $color-background;
       }
+      &__cart {
+        @include flexBox-center();
+        border: $border;
+        border-radius: 12px;
+        padding: 14px;
+        cursor: pointer;
+        position: relative;
+        &__count {
+          position: absolute;
+          top: -5px;
+          right: -5px;
+          background-color: $color-red;
+          border-radius: 11px;
+          width: 20px;
+          height: 20px;
+          @include flexBox-center();
+          font-family: $font-family;
+          font-size: 12px;
+          color: $color-white;
+        }
+        &:hover {
+          background-color: $color-background;
+        }
+      }
     }
 
     &__user {
@@ -78,10 +102,9 @@
 
       &__rightContent {
         @include flexBox-center();
-
         img {
-          height: 5px;
-          width: auto;
+          height: auto;
+          width: 9px;
         }
       }
 
@@ -90,10 +113,7 @@
       }
     }
   }
-}
-
-@include mobile() {
-  .header {
+  @include mobile() {
     display: none;
   }
 }
