@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,8 +10,11 @@ import CartIcon from "@/public/images/cart-gray.svg";
 import FlagGeIcon from "@/public/images/flag-ge.svg";
 import UserIcon from "@/public/images/user.svg";
 import ArrowDownIcon from "@/public/images/arrow-down.svg";
+import { useSelector } from "react-redux";
 
 const Header: React.FC = () => {
+  const cartItemsCount = useSelector((state: any) => state.onCartItems.count);
+
   const itemClass: string = headerStyles.header__rightContent__item;
 
   return (
@@ -25,8 +28,13 @@ const Header: React.FC = () => {
         <div className={itemClass}>
           <Image src={BellIcon} alt="Bell icon" />
         </div>
-        <div className={itemClass}>
+        <div className={headerStyles.header__rightContent__item__cart}>
           <Image src={CartIcon} alt="Cart icon" />
+          <span
+            className={headerStyles.header__rightContent__item__cart__count}
+          >
+            {cartItemsCount}
+          </span>
         </div>
         <>
           <div className={headerStyles.header__rightContent__user}>
