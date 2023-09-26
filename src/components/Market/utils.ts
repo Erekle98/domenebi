@@ -32,10 +32,14 @@ export const applyFilters = (data: IDomain[], filters: FiltersState) => {
   if (selectedDomains.length > 0) {
     filteredData = filteredData.filter((item) => {
       for (const domain of selectedDomains) {
-        if (domain === ".ge") {
-          return item.name.split(".").length === 2;
-        } else if (item.name.includes(domain)) {
-          return true;
+        if (item.name.includes(domain)) {
+          if (domain === ".ge") {
+            if (item.name.split(".")[1] === "ge") {
+              return true;
+            }
+          } else {
+            return true;
+          }
         }
       }
       return false;

@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
+import Image from "next/image";
 import marketStyles from "@/styles/components/Market.module.scss";
 import InputRange from "react-input-range";
 import "react-input-range/lib/css/index.css";
 import { categories, domains } from "./constants";
 import { useFiltersContext } from "@/context/FiltersContext";
+
+import RemoveIcon from "@/public/images/cancel.svg";
 
 interface RangeProps {
   min: number;
@@ -19,6 +22,10 @@ const Filters = () => {
 
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch({ type: "UPDATE_NAME", payload: event.target.value });
+  };
+
+  const handleNameRemove = () => {
+    dispatch({ type: "UPDATE_NAME", payload: "" });
   };
 
   const handleDomainChange = (domain: string) => {
@@ -172,13 +179,24 @@ const Filters = () => {
 
   return (
     <div className={marketStyles.market__mainSection__left}>
-      <input
-        type="text"
-        className={marketStyles.market__mainSection__left__searchInput}
-        placeholder="სახელით ძიება"
-        value={state.name}
-        onChange={handleNameChange}
-      />
+      <div className={marketStyles.market__mainSection__left__searchInput}>
+        <input
+          type="text"
+          placeholder="სახელი"
+          value={state.name}
+          onChange={handleNameChange}
+          className={marketStyles.market__mainSection__left__searchInput__input}
+        />
+        <Image
+          src={RemoveIcon}
+          alt="remove"
+          onClick={handleNameRemove}
+          className={
+            marketStyles.market__mainSection__left__searchInput__remove
+          }
+        />
+      </div>
+
       {renderRange({
         min: 0,
         max: 1000,
