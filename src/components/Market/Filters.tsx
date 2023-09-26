@@ -178,7 +178,7 @@ const Filters = () => {
   };
 
   return (
-    <div className={marketStyles.market__mainSection__left}>
+    <>
       <div className={marketStyles.market__mainSection__left__searchInput}>
         <input
           type="text"
@@ -237,7 +237,7 @@ const Filters = () => {
           {renderCheckboxes(domains, state.selectedDomains, handleDomainChange)}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

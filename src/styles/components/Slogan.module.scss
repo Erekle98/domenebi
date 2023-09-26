@@ -1,6 +1,9 @@
 @import "mixins";
 
 .slogan {
+  @include mobile {
+    margin-top: 0;
+  }
   @include container();
   @include flexBox-center();
   height: 180px;

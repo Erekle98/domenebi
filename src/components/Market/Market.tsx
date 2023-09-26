@@ -1,14 +1,20 @@
 import React, { useMemo } from "react";
+import useSWR from "swr";
+
+import { getDomains, domainsUrlEndpoint as cacheKey } from "@/api/domainsApi";
+
 import marketStyles from "@/styles/components/Market.module.scss";
 
-import { sortItems } from "./constants";
 import Filters from "./Filters";
 import DomainsTable from "./DomainsTable";
-import useSWR from "swr";
-import { getDomains, domainsUrlEndpoint as cacheKey } from "@/api/domainsApi";
-import { IDomain } from "@/interfaces/Market";
+
 import { useFiltersContext } from "@/context/FiltersContext";
+
 import { applyFilters } from "./utils";
+import { sortItems } from "./constants";
+
+import { IDomain } from "@/interfaces/Market";
+import TopSectionMobile from "./mobile/TopSection";
 
 const Market: React.FC = () => {
   const { state } = useFiltersContext();
@@ -59,8 +65,11 @@ const Market: React.FC = () => {
           </div>
         </div>
       </div>
+      <TopSectionMobile />
       <div className={marketStyles.market__mainSection}>
-        <Filters />
+        <div className={marketStyles.market__mainSection__left}>
+          <Filters />
+        </div>
         <DomainsTable
           isLoading={isLoading}
           error={error}

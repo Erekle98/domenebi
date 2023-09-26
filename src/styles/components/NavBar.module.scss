@@ -2,6 +2,9 @@
 @import "mixins";
 
 .navbar {
+  @include mobile {
+    display: none;
+  }
   padding: 20px;
   border-bottom: $border;
   border-top: $border;

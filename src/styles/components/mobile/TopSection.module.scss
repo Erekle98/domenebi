@@ -1,0 +1,38 @@
+@import "mixins";
+@import "variables";
+
+.mobileTopSection {
+  @include mobile {
+    @include flexBox-center();
+    gap: 15px;
+    &__filter {
+      @include flexBox-between();
+      border: $border;
+      border-radius: 10px;
+      background-color: $color-white;
+      padding: 12px;
+      width: 80%;
+      img {
+        width: 15px;
+        height: auto;
+      }
+    }
+    &__sort {
+      @include flexBox-between();
+      border: $border;
+      border-radius: 10px;
+      background-color: $color-white;
+      padding: 12px;
+      width: 80%;
+      img {
+        width: 10px;
+        height: auto;
+      }
+    }
+  }
+  display: none;
+}
+
+.filter {
+  display: none;
+}

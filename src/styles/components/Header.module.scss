@@ -2,6 +2,9 @@
 @import "mixins";
 
 .header {
+  @include mobile {
+    height: 70px;
+  }
   @include container();
   @include flexBox-between();
   width: 100%;
@@ -9,8 +12,25 @@
   background-color: $color-white;
 
   &__leftContent {
+    @include mobile {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    &__burger {
+      display: none;
+      @include mobile {
+        display: flex;
+        height: 16px;
+      }
+    }
+
     a {
       img {
+        @include mobile {
+          height: 20px;
+        }
+
         height: 32px;
         width: auto;
         object-fit: contain;
@@ -25,6 +45,10 @@
     gap: 20px;
 
     &__item {
+      @include mobile {
+        border: none;
+        padding: 0;
+      }
       @include flexBox-center();
       border: $border;
       border-radius: 12px;
@@ -40,6 +64,10 @@
         background-color: $color-background;
       }
       &__cart {
+        @include mobile {
+          border: none;
+          padding: 0;
+        }
         @include flexBox-center();
         border: $border;
         border-radius: 12px;
@@ -47,6 +75,10 @@
         cursor: pointer;
         position: relative;
         &__count {
+          @include mobile {
+            top: -15px;
+            right: -15px;
+          }
           position: absolute;
           top: -5px;
           right: -5px;
@@ -63,9 +95,34 @@
           background-color: $color-background;
         }
       }
+      &__flag {
+        @include mobile {
+          display: none;
+        }
+        @include flexBox-center();
+        border: $border;
+        border-radius: 12px;
+        padding: 14px;
+        cursor: pointer;
+
+        img {
+          height: 20px;
+          width: auto;
+        }
+
+        &:hover {
+          background-color: $color-background;
+        }
+      }
     }
 
     &__user {
+      @include mobile {
+        border: none;
+        padding: 0;
+        gap: 0;
+        width: auto;
+      }
       @include flexBox-between();
       background-color: $color-white;
       border: $border;
@@ -90,6 +147,10 @@
         }
 
         span {
+          @include mobile {
+            display: none;
+          }
+          display: block;
           max-width: 70px;
           white-space: nowrap;
           overflow: hidden;
@@ -101,7 +162,11 @@
       }
 
       &__rightContent {
+        @include mobile {
+          display: none;
+        }
         @include flexBox-center();
+        display: block;
         img {
           height: auto;
           width: 9px;
@@ -112,8 +177,5 @@
         background-color: $color-background;
       }
     }
-  }
-  @include mobile() {
-    display: none;
   }
 }

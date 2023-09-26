@@ -6,6 +6,12 @@
   }
 }
 
+@mixin laptop {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
 @mixin flexBox-between {
   display: flex;
   justify-content: space-between;
@@ -19,6 +25,10 @@
 }
 
 @mixin container {
+  @include mobile() {
+    width: 100%;
+    max-width: 100%;
+  }
   max-width: 1267px;
   margin: 0 auto;
   padding: 0 15px;

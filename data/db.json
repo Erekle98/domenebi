@@ -4,239 +4,175 @@
       "id": 1,
       "name": "example.ge",
       "price": 500,
-      "categories": [
-        "ბიზნესი",
-        "ავტო"
-      ],
-      "isAddedToCart": true
+      "categories": ["ბიზნესი", "ავტო"],
+      "isAddedToCart": false
     },
     {
       "id": 2,
       "name": "website.com.ge",
       "price": 750,
-      "categories": [
-        "მედიცინა",
-        "ტექნოლოგიები"
-      ],
-      "isAddedToCart": true
+      "categories": ["მედიცინა", "ტექნოლოგიები"],
+      "isAddedToCart": false
     },
     {
       "id": 3,
       "name": "domain.net.ge",
       "price": 300,
-      "categories": [
-        "უძრავი ქონება",
-        "განათლება"
-      ],
-      "isAddedToCart": true
+      "categories": ["უძრავი ქონება", "განათლება"],
+      "isAddedToCart": false
     },
     {
       "id": 4,
       "name": "business.org.ge",
       "price": 800,
-      "categories": [
-        "თამაშები",
-        "მედია"
-      ],
-      "isAddedToCart": true
+      "categories": ["თამაშები", "მედია"],
+      "isAddedToCart": false
     },
     {
       "id": 5,
       "name": "finance.edu.ge",
       "price": 450,
-      "categories": [
-        "ფინანსები",
-        "ბიზნესი"
-      ],
-      "isAddedToCart": true
+      "categories": ["ფინანსები", "ბიზნესი"],
+      "isAddedToCart": false
     },
     {
       "id": 6,
       "name": "technology.ge",
       "price": 600,
-      "categories": [
-        "ტექნოლოგიები",
-        "მედია"
-      ],
-      "isAddedToCart": true
+      "categories": ["ტექნოლოგიები", "მედია"],
+      "isAddedToCart": false
     },
     {
       "id": 7,
       "name": "health.com.ge",
       "price": 350,
-      "categories": [
-        "მედიცინა",
-        "უძრავი ქონება"
-      ],
-      "isAddedToCart": true
+      "categories": ["მედიცინა", "უძრავი ქონება"],
+      "isAddedToCart": false
     },
     {
       "id": 8,
       "name": "gaming.ge",
       "price": 900,
-      "categories": [
-        "თამაშები",
-        "მედია"
-      ],
-      "isAddedToCart": true
+      "categories": ["თამაშები", "მედია"],
+      "isAddedToCart": false
     },
     {
       "id": 9,
       "name": "travel.ge",
       "price": 550,
-      "categories": [
-        "გართობა და დასვენება",
-        "მედია"
-      ],
+      "categories": ["გართობა და დასვენება", "მედია"],
       "isAddedToCart": false
     },
     {
       "id": 10,
       "name": "food.com.ge",
       "price": 700,
-      "categories": [
-        "კომერცია"
-      ],
+      "categories": ["კომერცია"],
       "isAddedToCart": false
     },
     {
       "id": 11,
       "name": "culture.org.ge",
       "price": 420,
-      "categories": [
-        "განათლება",
-        "ფინანსები"
-      ],
+      "categories": ["განათლება", "ფინანსები"],
       "isAddedToCart": false
     },
     {
       "id": 12,
       "name": "music.edu.ge",
       "price": 870,
-      "categories": [
-        "მედია"
-      ],
+      "categories": ["მედია"],
       "isAddedToCart": false
     },
     {
       "id": 13,
       "name": "auto.net.ge",
       "price": 280,
-      "categories": [
-        "ავტო",
-        "ბიზნესი"
-      ],
+      "categories": ["ავტო", "ბიზნესი"],
       "isAddedToCart": false
     },
     {
       "id": 14,
       "name": "news.com.ge",
       "price": 590,
-      "categories": [
-        "მედია",
-        "ტექნოლოგიები"
-      ],
-      "isAddedToCart": true
+      "categories": ["მედია", "ტექნოლოგიები"],
+      "isAddedToCart": false
     },
     {
       "id": 15,
       "name": "science.ge",
       "price": 410,
-      "categories": [
-        "განათლება"
-      ],
+      "categories": ["განათლება"],
       "isAddedToCart": false
     },
     {
       "id": 16,
       "name": "sports.org.ge",
       "price": 980,
-      "categories": [
-        "თამაშები"
-      ],
+      "categories": ["თამაშები"],
       "isAddedToCart": false
     },
     {
       "id": 17,
       "name": "entertainment.edu.ge",
       "price": 600,
-      "categories": [
-        "ბიზნესი",
-        "მედია"
-      ],
+      "categories": ["ბიზნესი", "მედია"],
       "isAddedToCart": false
     },
     {
       "id": 18,
       "name": "travel.ge",
       "price": 750,
-      "categories": [
-        "გართობა და დასვენება"
-      ],
-      "isAddedToCart": true
+      "categories": ["გართობა და დასვენება"],
+      "isAddedToCart": false
     },
     {
       "id": 19,
       "name": "food.net.ge",
       "price": 320,
-      "categories": [
-        "კომერცია"
-      ],
+      "categories": ["კომერცია"],
       "isAddedToCart": false
     },
     {
       "id": 20,
       "name": "culture.ge",
       "price": 780,
-      "categories": [
-        "ფინანსები"
-      ],
+      "categories": ["ფინანსები"],
       "isAddedToCart": false
     },
     {
       "id": 21,
       "name": "music.ge",
       "price": 550,
-      "categories": [
-        "მედია"
-      ],
+      "categories": ["მედია"],
       "isAddedToCart": false
     },
     {
       "id": 22,
       "name": "auto.com.ge",
       "price": 890,
-      "categories": [
-        "ავტო",
-        "ბიზნესი"
-      ],
+      "categories": ["ავტო", "ბიზნესი"],
       "isAddedToCart": false
     },
     {
       "id": 23,
       "name": "news.ge",
       "price": 420,
-      "categories": [
-        "ტექნოლოგიები"
-      ],
+      "categories": ["ტექნოლოგიები"],
       "isAddedToCart": false
     },
     {
       "id": 24,
       "name": "science.com.ge",
       "price": 980,
-      "categories": [
-        "განათლება"
-      ],
+      "categories": ["განათლება"],
       "isAddedToCart": false
     },
     {
       "id": 25,
       "name": "sports.ge",
       "price": 600,
-      "categories": [
-        "თამაშები"
-      ],
+      "categories": ["თამაშები"],
       "isAddedToCart": false
     }
   ]

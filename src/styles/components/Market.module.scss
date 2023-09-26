@@ -4,6 +4,9 @@
 .market {
   @include container();
   &__topSection {
+    @include mobile {
+      display: none;
+    }
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-column-gap: 40px;
@@ -41,11 +44,19 @@
     }
   }
   &__mainSection {
+    @include mobile {
+      grid-template-columns: 1fr;
+      grid-row-gap: 30px;
+      grid-column-gap: 0;
+    }
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-column-gap: 40px;
     margin-top: 25px;
     &__left {
+      @include mobile {
+        display: none;
+      }
       border: $border;
       border-radius: 15px;
       background-color: $color-white;
@@ -127,6 +138,9 @@
       }
     }
     &__right {
+      @include mobile {
+        padding: 20px 0;
+      }
       border: $border;
       border-radius: 15px;
       background-color: $color-white;
