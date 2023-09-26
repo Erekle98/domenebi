@@ -3,28 +3,28 @@ import Image from "next/image";
 
 import Filters from "../Filters";
 
-import mobileFilters from "@/styles/components/mobile/Filters.module.scss";
+import styles from "@/styles/components/mobile/Filters.module.scss";
 
 import ExitIcon from "@/public/images/mobile/exit.svg";
 
-const MobileFilters = ({
-  handleCloseFilters,
-}: {
+interface Props {
   handleCloseFilters: () => void;
-}) => {
+}
+
+const MobileFilters: React.FC<Props> = ({ handleCloseFilters }) => {
+  const handleSearch = () => {
+    handleCloseFilters();
+  };
+
   return (
-    <div className={mobileFilters.filter}>
-      <div className={mobileFilters.filter__title}>
+    <div className={styles.filter}>
+      <div className={styles.filter__title}>
         <div>ფილტრი</div>
-        <Image
-          src={ExitIcon}
-          alt="Exit icon"
-          onClick={() => handleCloseFilters()}
-        />
+        <Image src={ExitIcon} alt="Exit icon" onClick={handleCloseFilters} />
       </div>
       <Filters />
-      <div className={mobileFilters.filter__buttonContainer}>
-        <button onClick={() => handleCloseFilters()}>ძიება</button>
+      <div className={styles.filter__buttonContainer}>
+        <button onClick={handleSearch}>ძიება</button>
       </div>
     </div>
   );

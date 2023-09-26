@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 
 import marketStyles from "@/styles/components/mobile/TopSection.module.scss";
@@ -8,7 +8,7 @@ import DropdownIcon from "@/public/images/mobile/dropdown.svg";
 import MobileFilters from "./Filters";
 
 const TopSection = () => {
-  const filtersRef = React.useRef<HTMLDivElement>(null);
+  const filtersRef = useRef<HTMLDivElement>(null);
 
   const handleOpenFilters = () => {
     if (filtersRef.current) {

@@ -11,6 +11,7 @@ export default function Home() {
     <>
       <Head>
         <title>Domenebi</title>
+        <link rel="icon" type="image/x-icon" href="/images/do-icon.jpg" />
         <meta name="description" content="Domenebi.ge try it out" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

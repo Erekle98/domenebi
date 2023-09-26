@@ -13,23 +13,23 @@ import UserIcon from "@/public/images/user.svg";
 import ArrowDownIcon from "@/public/images/arrow-down.svg";
 import BurgerIcon from "@/public/images/mobile/burger.svg";
 
-const Header: React.FC = () => {
+interface Props {}
+
+const Header: React.FC<Props> = () => {
   const cartItemsCount = useSelector((state: any) => state.onCartItems.count);
 
-  const itemClass: string = headerStyles.header__rightContent__item;
-
   return (
-    <div className={headerStyles.header}>
+    <header className={headerStyles.header}>
       <div className={headerStyles.header__leftContent}>
         <div className={headerStyles.header__leftContent__burger}>
           <Image src={BurgerIcon} alt="Burger icon" />
         </div>
-        <Link href={"/"}>
+        <Link href="/">
           <Image src={HeaderLogo} alt="logo" priority />
         </Link>
       </div>
       <div className={headerStyles.header__rightContent}>
-        <div className={itemClass}>
+        <div className={headerStyles.header__rightContent__item}>
           <Image src={BellIcon} alt="Bell icon" />
         </div>
         <div className={headerStyles.header__rightContent__item__cart}>
@@ -40,26 +40,22 @@ const Header: React.FC = () => {
             {cartItemsCount}
           </span>
         </div>
-        <>
-          <div className={headerStyles.header__rightContent__user}>
-            <div
-              className={headerStyles.header__rightContent__user__leftContent}
-            >
-              <Image src={UserIcon} alt="User icon" />
-              <span>Kancha Co.</span>
-            </div>
-            <div
-              className={headerStyles.header__rightContent__user__rightContent}
-            >
-              <Image src={ArrowDownIcon} alt="Arrow down icon" />
-            </div>
+        <div className={headerStyles.header__rightContent__user}>
+          <div className={headerStyles.header__rightContent__user__leftContent}>
+            <Image src={UserIcon} alt="User icon" />
+            <span>Kancha Co.</span>
           </div>
-        </>
+          <div
+            className={headerStyles.header__rightContent__user__rightContent}
+          >
+            <Image src={ArrowDownIcon} alt="Arrow down icon" />
+          </div>
+        </div>
         <div className={headerStyles.header__rightContent__item__flag}>
           <Image src={FlagGeIcon} alt="Georgian" />
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
