@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
@@ -28,11 +28,17 @@ const DomainsTable = ({ isLoading, error, tableData, mutate }: Props) => {
   const dispatch = useDispatch();
   const itemsOnCarts = useSelector((state: any) => state.onCartItems.count);
 
+  const processedItemsRef = useRef<Set<string>>(new Set());
+
   useEffect(() => {
-    if (tableData && itemsOnCarts === 0) {
+    if (tableData) {
       tableData.forEach((item: IDomain) => {
-        if (item.isAddedToCart) {
+        if (
+          item.isAddedToCart &&
+          !processedItemsRef.current.has(item.id.toString())
+        ) {
           dispatch(addOnCart());
+          processedItemsRef.current.add(item.id.toString());
         }
       });
     }
@@ -52,7 +58,10 @@ const DomainsTable = ({ isLoading, error, tableData, mutate }: Props) => {
   const handleItemAddToCart = async (item: IDomain) => {
     const updatedItem = { ...item, isAddedToCart: true };
     await updateDomainMutation(updatedItem);
-    dispatch(addOnCart());
+    if (!processedItemsRef.current.has(item.id.toString())) {
+      dispatch(addOnCart());
+      processedItemsRef.current.add(item.id.toString()); // Mark the item as processed.
+    }
   };
 
   const renderTableItems = () => {
