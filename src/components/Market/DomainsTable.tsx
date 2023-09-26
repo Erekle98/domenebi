@@ -14,6 +14,7 @@ import CartIcon from "@/public/images/cart-white.svg";
 import ArrowIcon from "@/public/images/Btn_send.svg";
 import ArrowIconHover from "@/public/images/Btn_send-1.svg";
 import TickIcon from "@/public/images/tick.svg";
+import NotFoundIcon from "@/public/images/not-found.svg";
 
 interface Props {
   isLoading: boolean;
@@ -155,6 +156,25 @@ const DomainsTable = ({ isLoading, error, tableData, mutate }: Props) => {
 
   if (error) {
     return <div>Error</div>;
+  }
+
+  if (!tableData.length) {
+    return (
+      <div className={marketStyles.market__mainSection__right__notFound}>
+        <Image src={NotFoundIcon} alt="Not found" />
+        <div
+          className={marketStyles.market__mainSection__right__notFound__title}
+        >
+          დომენი ვერ მოიძებნა
+        </div>
+        <div
+          className={marketStyles.market__mainSection__right__notFound__text}
+        >
+          მითითებული პარამეტრებით დომენების მარკეტში შედეგები ვერ მოიძებნა,
+          შეცვალეთ ძიების პარამეტრები და ცადეთ თავიდან
+        </div>
+      </div>
+    );
   }
 
   return (
